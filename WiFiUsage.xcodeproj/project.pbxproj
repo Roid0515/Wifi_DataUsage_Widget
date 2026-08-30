@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* WiFiUsageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* WiFiUsageModels.swift */; };
+		A10000000000000000000002 /* NetworkProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000002 /* NetworkProviders.swift */; };
+		A10000000000000000000003 /* WiFiSessionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000003 /* WiFiSessionEngine.swift */; };
+		A10000000000000000000004 /* Storage/SharedSnapshotStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000004 /* Storage/SharedSnapshotStore.swift */; };
+		A10000000000000000000005 /* Formatting/UsageFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000005 /* Formatting/UsageFormatters.swift */; };
+		A10000000000000000000006 /* WiFiUsageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000006 /* WiFiUsageApp.swift */; };
+		A10000000000000000000007 /* UsageMonitorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000007 /* UsageMonitorModel.swift */; };
+		A10000000000000000000008 /* MenuBarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000008 /* MenuBarContentView.swift */; };
+		A10000000000000000000009 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000009 /* SettingsView.swift */; };
+		A1000000000000000000000A /* WiFiUsageWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000A /* WiFiUsageWidget.swift */; };
+		A1000000000000000000000B /* WiFiUsageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000B /* WiFiUsageProvider.swift */; };
+		A1000000000000000000000C /* WiFiUsageWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000C /* WiFiUsageWidgetView.swift */; };
+		A1000000000000000000000D /* SessionMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000D /* SessionMonitorTests.swift */; };
+		A1000000000000000000000E /* ByteFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000E /* ByteFormatterTests.swift */; };
+		A1000000000000000000000F /* libWiFiUsageCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A20000000000000000000011 /* libWiFiUsageCore.a */; };
+		A10000000000000000000010 /* libWiFiUsageCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A20000000000000000000011 /* libWiFiUsageCore.a */; };
+		A10000000000000000000011 /* libWiFiUsageCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A20000000000000000000011 /* libWiFiUsageCore.a */; };
+		A10000000000000000000012 /* WiFiUsageWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A20000000000000000000013 /* WiFiUsageWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A10000000000000000000013 /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A20000000000000000000015 /* CoreWLAN.framework */; };
+		A10000000000000000000014 /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A20000000000000000000015 /* CoreWLAN.framework */; };
+		A10000000000000000000015 /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A20000000000000000000015 /* CoreWLAN.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A30000000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A90000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A80000000000000000000001;
+			remoteInfo = WiFiUsageCore;
+		};
+		A30000000000000000000002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A90000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A80000000000000000000003;
+			remoteInfo = WiFiUsageWidget;
+		};
+		A30000000000000000000003 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A90000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A80000000000000000000001;
+			remoteInfo = WiFiUsageCore;
+		};
+		A30000000000000000000004 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A90000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A80000000000000000000001;
+			remoteInfo = WiFiUsageCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A40000000000000000000001 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A10000000000000000000012 /* WiFiUsageWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A20000000000000000000001 /* WiFiUsageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiUsageModels.swift; sourceTree = "<group>"; };
+		A20000000000000000000002 /* NetworkProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviders.swift; sourceTree = "<group>"; };
+		A20000000000000000000003 /* WiFiSessionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiSessionEngine.swift; sourceTree = "<group>"; };
+		A20000000000000000000004 /* Storage/SharedSnapshotStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage/SharedSnapshotStore.swift; sourceTree = "<group>"; };
+		A20000000000000000000005 /* Formatting/UsageFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatting/UsageFormatters.swift; sourceTree = "<group>"; };
+		A20000000000000000000006 /* WiFiUsageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiUsageApp.swift; sourceTree = "<group>"; };
+		A20000000000000000000007 /* UsageMonitorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageMonitorModel.swift; sourceTree = "<group>"; };
+		A20000000000000000000008 /* MenuBarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarContentView.swift; sourceTree = "<group>"; };
+		A20000000000000000000009 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A2000000000000000000000A /* WiFiUsageWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiUsageWidget.swift; sourceTree = "<group>"; };
+		A2000000000000000000000B /* WiFiUsageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiUsageProvider.swift; sourceTree = "<group>"; };
+		A2000000000000000000000C /* WiFiUsageWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiUsageWidgetView.swift; sourceTree = "<group>"; };
+		A2000000000000000000000D /* SessionMonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMonitorTests.swift; sourceTree = "<group>"; };
+		A2000000000000000000000E /* ByteFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteFormatterTests.swift; sourceTree = "<group>"; };
+		A2000000000000000000000F /* WiFiUsageApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WiFiUsageApp-Info.plist"; sourceTree = "<group>"; };
+		A20000000000000000000010 /* WiFiUsageWidget-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WiFiUsageWidget-Info.plist"; sourceTree = "<group>"; };
+		A20000000000000000000011 /* libWiFiUsageCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWiFiUsageCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20000000000000000000012 /* WiFi Usage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WiFi Usage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20000000000000000000013 /* WiFiUsageWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WiFiUsageWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20000000000000000000014 /* WiFiUsageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiFiUsageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20000000000000000000015 /* CoreWLAN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreWLAN.framework; path = System/Library/Frameworks/CoreWLAN.framework; sourceTree = SDKROOT; };
+		A20000000000000000000016 /* WiFiUsageApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WiFiUsageApp.entitlements; sourceTree = "<group>"; };
+		A20000000000000000000017 /* WiFiUsageWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WiFiUsageWidget.entitlements; sourceTree = "<group>"; };
+		A20000000000000000000018 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A50000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000013 /* CoreWLAN.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A50000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000000000000000000000F /* libWiFiUsageCore.a in Frameworks */,
+				A10000000000000000000014 /* CoreWLAN.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A50000000000000000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000010 /* libWiFiUsageCore.a in Frameworks */,
+				A10000000000000000000015 /* CoreWLAN.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A50000000000000000000004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000011 /* libWiFiUsageCore.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A60000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A60000000000000000000002 /* WiFiUsageCore */,
+				A60000000000000000000006 /* WiFiUsageApp */,
+				A6000000000000000000000A /* WiFiUsageWidget */,
+				A6000000000000000000000B /* WiFiUsageTests */,
+				A6000000000000000000000C /* Resources */,
+				A20000000000000000000018 /* README.md */,
+				A6000000000000000000000D /* Frameworks */,
+				A6000000000000000000000E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A60000000000000000000002 /* WiFiUsageCore */ = {
+			isa = PBXGroup;
+			children = (
+				A60000000000000000000003 /* Models */,
+				A60000000000000000000004 /* Networking */,
+				A60000000000000000000005 /* Storage and Formatting */,
+			);
+			path = WiFiUsageCore;
+			sourceTree = "<group>";
+		};
+		A60000000000000000000003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000001 /* WiFiUsageModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A60000000000000000000004 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000002 /* NetworkProviders.swift */,
+				A20000000000000000000003 /* WiFiSessionEngine.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		A60000000000000000000005 /* Storage and Formatting */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000004 /* Storage/SharedSnapshotStore.swift */,
+				A20000000000000000000005 /* Formatting/UsageFormatters.swift */,
+			);
+			name = "Storage and Formatting";
+			path = .;
+			sourceTree = "<group>";
+		};
+		A60000000000000000000006 /* WiFiUsageApp */ = {
+			isa = PBXGroup;
+			children = (
+				A60000000000000000000007 /* App */,
+				A60000000000000000000008 /* MenuBar */,
+				A60000000000000000000009 /* Settings */,
+			);
+			path = WiFiUsageApp;
+			sourceTree = "<group>";
+		};
+		A60000000000000000000007 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000006 /* WiFiUsageApp.swift */,
+				A20000000000000000000007 /* UsageMonitorModel.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A60000000000000000000008 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000008 /* MenuBarContentView.swift */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		A60000000000000000000009 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000009 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A6000000000000000000000A /* WiFiUsageWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A2000000000000000000000A /* WiFiUsageWidget.swift */,
+				A2000000000000000000000B /* WiFiUsageProvider.swift */,
+				A2000000000000000000000C /* WiFiUsageWidgetView.swift */,
+			);
+			path = WiFiUsageWidget;
+			sourceTree = "<group>";
+		};
+		A6000000000000000000000B /* WiFiUsageTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2000000000000000000000D /* SessionMonitorTests.swift */,
+				A2000000000000000000000E /* ByteFormatterTests.swift */,
+			);
+			path = WiFiUsageTests;
+			sourceTree = "<group>";
+		};
+		A6000000000000000000000C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A2000000000000000000000F /* WiFiUsageApp-Info.plist */,
+				A20000000000000000000010 /* WiFiUsageWidget-Info.plist */,
+				A20000000000000000000016 /* WiFiUsageApp.entitlements */,
+				A20000000000000000000017 /* WiFiUsageWidget.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A6000000000000000000000D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000015 /* CoreWLAN.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6000000000000000000000E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000011 /* libWiFiUsageCore.a */,
+				A20000000000000000000012 /* WiFi Usage.app */,
+				A20000000000000000000013 /* WiFiUsageWidget.appex */,
+				A20000000000000000000014 /* WiFiUsageTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A80000000000000000000001 /* WiFiUsageCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB0000000000000000000001 /* Build configuration list for PBXNativeTarget "WiFiUsageCore" */;
+			buildPhases = (
+				A70000000000000000000001 /* Sources */,
+				A50000000000000000000001 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WiFiUsageCore;
+			productName = WiFiUsageCore;
+			productReference = A20000000000000000000011 /* libWiFiUsageCore.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A80000000000000000000002 /* WiFiUsageApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB0000000000000000000002 /* Build configuration list for PBXNativeTarget "WiFiUsageApp" */;
+			buildPhases = (
+				A70000000000000000000002 /* Sources */,
+				A50000000000000000000002 /* Frameworks */,
+				A40000000000000000000001 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC0000000000000000000001 /* PBXTargetDependency */,
+				AC0000000000000000000002 /* PBXTargetDependency */,
+			);
+			name = WiFiUsageApp;
+			productName = "WiFi Usage";
+			productReference = A20000000000000000000012 /* WiFi Usage.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A80000000000000000000003 /* WiFiUsageWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB0000000000000000000003 /* Build configuration list for PBXNativeTarget "WiFiUsageWidget" */;
+			buildPhases = (
+				A70000000000000000000003 /* Sources */,
+				A50000000000000000000003 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC0000000000000000000003 /* PBXTargetDependency */,
+			);
+			name = WiFiUsageWidget;
+			productName = WiFiUsageWidget;
+			productReference = A20000000000000000000013 /* WiFiUsageWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		A80000000000000000000004 /* WiFiUsageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB0000000000000000000004 /* Build configuration list for PBXNativeTarget "WiFiUsageTests" */;
+			buildPhases = (
+				A70000000000000000000004 /* Sources */,
+				A50000000000000000000004 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC0000000000000000000004 /* PBXTargetDependency */,
+			);
+			name = WiFiUsageTests;
+			productName = WiFiUsageTests;
+			productReference = A20000000000000000000014 /* WiFiUsageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A90000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					A80000000000000000000001 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					A80000000000000000000002 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					A80000000000000000000003 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					A80000000000000000000004 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+				};
+			};
+			buildConfigurationList = AB0000000000000000000000 /* Build configuration list for PBXProject "WiFiUsage" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A60000000000000000000001;
+			productRefGroup = A6000000000000000000000E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A80000000000000000000002 /* WiFiUsageApp */,
+				A80000000000000000000003 /* WiFiUsageWidget */,
+				A80000000000000000000001 /* WiFiUsageCore */,
+				A80000000000000000000004 /* WiFiUsageTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A70000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000001 /* WiFiUsageModels.swift in Sources */,
+				A10000000000000000000002 /* NetworkProviders.swift in Sources */,
+				A10000000000000000000003 /* WiFiSessionEngine.swift in Sources */,
+				A10000000000000000000004 /* Storage/SharedSnapshotStore.swift in Sources */,
+				A10000000000000000000005 /* Formatting/UsageFormatters.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A70000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000006 /* WiFiUsageApp.swift in Sources */,
+				A10000000000000000000007 /* UsageMonitorModel.swift in Sources */,
+				A10000000000000000000008 /* MenuBarContentView.swift in Sources */,
+				A10000000000000000000009 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A70000000000000000000003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000000000000000000000A /* WiFiUsageWidget.swift in Sources */,
+				A1000000000000000000000B /* WiFiUsageProvider.swift in Sources */,
+				A1000000000000000000000C /* WiFiUsageWidgetView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A70000000000000000000004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000000000000000000000D /* SessionMonitorTests.swift in Sources */,
+				A1000000000000000000000E /* ByteFormatterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC0000000000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A80000000000000000000001 /* WiFiUsageCore */;
+			targetProxy = A30000000000000000000001 /* PBXContainerItemProxy */;
+		};
+		AC0000000000000000000002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A80000000000000000000003 /* WiFiUsageWidget */;
+			targetProxy = A30000000000000000000002 /* PBXContainerItemProxy */;
+		};
+		AC0000000000000000000003 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A80000000000000000000001 /* WiFiUsageCore */;
+			targetProxy = A30000000000000000000003 /* PBXContainerItemProxy */;
+		};
+		AC0000000000000000000004 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A80000000000000000000001 /* WiFiUsageCore */;
+			targetProxy = A30000000000000000000004 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AD0000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD0000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		AD0000000000000000000011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		AD0000000000000000000012 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		AD0000000000000000000021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Resources/WiFiUsageApp.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZA5PPDLD8T;
+				INFOPLIST_FILE = "Resources/WiFiUsageApp-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = local.wifiusage.app;
+				PRODUCT_NAME = "WiFi Usage";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		AD0000000000000000000022 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Resources/WiFiUsageApp.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZA5PPDLD8T;
+				INFOPLIST_FILE = "Resources/WiFiUsageApp-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = local.wifiusage.app;
+				PRODUCT_NAME = "WiFi Usage";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		AD0000000000000000000031 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Resources/WiFiUsageWidget.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZA5PPDLD8T;
+				INFOPLIST_FILE = "Resources/WiFiUsageWidget-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = local.wifiusage.app.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		AD0000000000000000000032 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Resources/WiFiUsageWidget.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZA5PPDLD8T;
+				INFOPLIST_FILE = "Resources/WiFiUsageWidget-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = local.wifiusage.app.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		AD0000000000000000000041 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = local.wifiusage.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "";
+			};
+			name = Debug;
+		};
+		AD0000000000000000000042 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = local.wifiusage.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB0000000000000000000000 /* Build configuration list for PBXProject "WiFiUsage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD0000000000000000000001 /* Debug */,
+				AD0000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB0000000000000000000001 /* Build configuration list for PBXNativeTarget "WiFiUsageCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD0000000000000000000011 /* Debug */,
+				AD0000000000000000000012 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB0000000000000000000002 /* Build configuration list for PBXNativeTarget "WiFiUsageApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD0000000000000000000021 /* Debug */,
+				AD0000000000000000000022 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB0000000000000000000003 /* Build configuration list for PBXNativeTarget "WiFiUsageWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD0000000000000000000031 /* Debug */,
+				AD0000000000000000000032 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB0000000000000000000004 /* Build configuration list for PBXNativeTarget "WiFiUsageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD0000000000000000000041 /* Debug */,
+				AD0000000000000000000042 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A90000000000000000000001 /* Project object */;
+}
