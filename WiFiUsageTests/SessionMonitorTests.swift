@@ -141,4 +141,97 @@ final class SessionMonitorTests: XCTestCase {
         XCTAssertNotEqual(first.sessionID, afterReboot.sessionID)
         XCTAssertEqual(afterReboot.totalBytes, 0)
     }
+
+    func testDisconnectReloadsWidgetDuringUsageReloadCooldown() {
+        let connected = makeSnapshot(isConnected: true, rxBytes: 100, txBytes: 50)
+        let disconnected = WiFiUsageSnapshot.disconnected(at: startTime.addingTimeInterval(5))
+
+        XCTAssertTrue(
+            WidgetReloadPolicy.shouldReload(
+                previous: connected,
+                next: disconnected,
+                secondsSinceLastReload: 5
+            )
+        )
+    }
+
+    func testReconnectReloadsWidgetDuringUsageReloadCooldown() {
+        let disconnected = WiFiUsageSnapshot.disconnected(at: startTime)
+        let reconnected = makeSnapshot(isConnected: true, rxBytes: 0, txBytes: 0)
+
+        XCTAssertTrue(
+            WidgetReloadPolicy.shouldReload(
+                previous: disconnected,
+                next: reconnected,
+                secondsSinceLastReload: 5
+            )
+        )
+    }
+
+    func testNewSessionReloadsWidgetDuringUsageReloadCooldown() {
+        let previous = makeSnapshot(isConnected: true, rxBytes: 100, txBytes: 50)
+        let next = makeSnapshot(
+            isConnected: true,
+            sessionID: UUID(),
+            rxBytes: 0,
+            txBytes: 0
+        )
+
+        XCTAssertTrue(
+            WidgetReloadPolicy.shouldReload(
+                previous: previous,
+                next: next,
+                secondsSinceLastReload: 5
+            )
+        )
+    }
+
+    func testUsageOnlyReloadRemainsThrottled() {
+        let sessionID = UUID()
+        let previous = makeSnapshot(
+            isConnected: true,
+            sessionID: sessionID,
+            rxBytes: 100,
+            txBytes: 50
+        )
+        let next = makeSnapshot(
+            isConnected: true,
+            sessionID: sessionID,
+            rxBytes: 200,
+            txBytes: 75
+        )
+
+        XCTAssertFalse(
+            WidgetReloadPolicy.shouldReload(
+                previous: previous,
+                next: next,
+                secondsSinceLastReload: 5
+            )
+        )
+        XCTAssertTrue(
+            WidgetReloadPolicy.shouldReload(
+                previous: previous,
+                next: next,
+                secondsSinceLastReload: 60
+            )
+        )
+    }
+
+    private func makeSnapshot(
+        isConnected: Bool,
+        sessionID: UUID = UUID(),
+        rxBytes: UInt64,
+        txBytes: UInt64
+    ) -> WiFiUsageSnapshot {
+        WiFiUsageSnapshot(
+            isConnected: isConnected,
+            interfaceName: isConnected ? "en0" : nil,
+            ssid: isConnected ? "WiFi_A" : nil,
+            sessionID: sessionID,
+            sessionStartedAt: isConnected ? startTime : nil,
+            lastUpdatedAt: startTime,
+            rxBytes: rxBytes,
+            txBytes: txBytes
+        )
+    }
 }

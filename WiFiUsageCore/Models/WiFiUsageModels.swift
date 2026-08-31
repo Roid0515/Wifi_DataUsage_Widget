@@ -115,6 +115,26 @@ public struct WiFiSessionState: Codable, Equatable, Sendable {
     }
 }
 
+public enum WidgetReloadPolicy {
+    public static func shouldReload(
+        previous: WiFiUsageSnapshot?,
+        next: WiFiUsageSnapshot,
+        secondsSinceLastReload: TimeInterval,
+        minimumUsageReloadInterval: TimeInterval = 60
+    ) -> Bool {
+        guard let previous else { return true }
+
+        let connectionChanged = previous.isConnected != next.isConnected
+        let sessionChanged = next.isConnected && previous.sessionID != next.sessionID
+        if connectionChanged || sessionChanged {
+            return true
+        }
+
+        let usageChanged = previous.totalBytes != next.totalBytes
+        return usageChanged && secondsSinceLastReload >= minimumUsageReloadInterval
+    }
+}
+
 public enum UnitPreference: String, CaseIterable, Identifiable, Sendable {
     case automatic = "Auto"
     case megabytes = "MB"

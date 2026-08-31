@@ -130,17 +130,25 @@ final class UsageMonitorModel: ObservableObject {
     private func publish(_ next: WiFiUsageSnapshot, forceWidgetReload: Bool = false) {
         snapshot = next
 
+        let now = Date()
+        let previous = lastPersistedSnapshot
         let sessionChanged = next.isConnected
-            && lastPersistedSnapshot?.sessionID != next.sessionID
-        let valueChanged = lastPersistedSnapshot?.totalBytes != next.totalBytes
-            || lastPersistedSnapshot?.isConnected != next.isConnected
+            && previous?.sessionID != next.sessionID
+        let valueChanged = previous?.totalBytes != next.totalBytes
+            || previous?.isConnected != next.isConnected
             || sessionChanged
-        if valueChanged || Date().timeIntervalSince(lastPersistedSnapshot?.lastUpdatedAt ?? .distantPast) >= 30 {
+        let shouldReloadWidget = WidgetReloadPolicy.shouldReload(
+            previous: previous,
+            next: next,
+            secondsSinceLastReload: now.timeIntervalSince(lastWidgetReload)
+        )
+
+        if valueChanged || now.timeIntervalSince(previous?.lastUpdatedAt ?? .distantPast) >= 30 {
             store.save(snapshot: next, state: engine.state)
             lastPersistedSnapshot = next
         }
 
-        if forceWidgetReload || (valueChanged && Date().timeIntervalSince(lastWidgetReload) >= 60) {
+        if forceWidgetReload || shouldReloadWidget {
             reloadWidget()
         }
     }
